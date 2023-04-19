@@ -6,6 +6,7 @@ const Url = require("./models/urls.model");
 
 const connectToUrlDB = async () => {
     await condb(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/');
+    console.log("Database created on uri : " + process.env.MONGO_URI);
 }
 connectToUrlDB();
 
