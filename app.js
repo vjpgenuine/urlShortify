@@ -14,6 +14,10 @@ const app = express();
 app.use('/url', router);
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.status(200).send("Url Shortner");
+});
+
 app.get('/:urlId', async (req, res) => {
     const redirectOrigin = await Url.findOneAndUpdate({
         urlId: req.params.urlId,
